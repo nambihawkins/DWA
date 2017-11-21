@@ -1,0 +1,19 @@
+{
+  "name": "form",
+  "version": "1.0.0",
+  "description": "html form",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nambihawkins/DWA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nambihawkins/DWA/issues"
+  },
+  "homepage": "https://github.com/nambihawkins/DWA#readme"
+}
