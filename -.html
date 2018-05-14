@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪</title>
+</head>
+
+<body>
+  <p>
+    <em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+
+    // Some data we can work with
+
+    const athletes = [
+      { first: 'Michael', last: 'Phelps', born: 1985, games: [2000, 2004, 2008, 2012, 2016] },
+      { first: 'Justin', last: 'Gatlin', born: 1982, games: [2004, 2012, 2016] },
+      { first: 'Kai', last: 'Zou', born: 1988, games: [2008, 2012] },
+      { first: 'Simone', last: 'Biles', born: 1997, games: [2016] },
+      { first: 'Katie', last: 'Ledecky', born: 1997, games: [2012, 2016] },
+      { first: 'Allyson', last: 'Felix', born: 1985, games: [2004, 2008, 2012, 2016] },
+    ];
+
+    const medals = [
+      {
+        category: "Gymnastics",
+        event: 'vault',
+        year: 2016,
+        athlete: "simone-biles",
+        record: 15.966,
+        rank: 'gold'
+      },
+      {
+        category: "Gymnastics",
+        event: 'vault',
+        year: 2016,
+        athlete: "simone-biles",
+        record: 15.966,
+        rank: 'gold'
+      },
+      {
+        category: "Gymnastics",
+        event: 'floor exercises men',
+        year: 2008,
+        athlete: "kai-zou",
+        record: 16.050,
+        rank: 'gold'
+      },
+      {
+        category: "Gymnastics",
+        event: 'floor exercises men',
+        year: 2012,
+        athlete: "kai-zou",
+        record: 15.933,
+        rank: 'gold'
+      },
+      {
+        category: "Athletics",
+        event: '200m men',
+        year: 2008,
+        athlete: "usain-bolt",
+        record: 19.30,
+        rank: 'gold'
+      },
+      {
+        category: "Athletics",
+        event: '200m men',
+        year: 2012,
+        athlete: "usain-bolt",
+        record: 19.32,
+        rank: 'gold'
+      },
+      {
+        category: "Aquatics",
+        event: '4x200m freestyle relay men',
+        year: 2008,
+        athlete: "michael-phelps",
+        record: '7:07.33',
+        rank: 'gold'
+      },
+      {
+        category: "Aquatics",
+        event: '4x200m freestyle relay men',
+        year: 2004,
+        athlete: "michael-phelps",
+        record: '6:58.56',
+        rank: 'gold'
+      },
+      {
+        category: "Athletics",
+        event: '200m women',
+        year: 2008,
+        athlete: "usain-bolt",
+        record: 22.18,
+        rank: 'silver'
+      },
+      {
+        category: "Athletics",
+        event: '200m women',
+        year: 2012,
+        athlete: "usain-bolt",
+        record: 19.32,
+        rank: 'gold'
+      },
+    ]
+
+    // Array.prototype.filter()
+    // 1. Filter the list of athletes for those who were born in the 1980's
+    let dates1980s = athletes.filter(x => { return x.born >= 1980 && x.born <= 1989; });
+    console.log(dates1980s);
+
+    // Array.prototype.map()
+    // 2. Give us an array of the athletes first and last names
+    let fullNames = athletes.map(y => { return y.first + " " + y.last; });
+    console.log(fullNames);
+
+    // Array.prototype.sort()
+    // 3. Sort the athletes by birthdate, oldest to youngest
+    let sortedBdays = athletes.sort((a,b) => { return b.born-a.born; });
+    console.log(sortedBdays);
+
+    //I NEED HELP!-------------------------------------------------
+    // Array.prototype.reduce()
+    // 4. How many medals are in each category?
+    let arr = [];
+    for (var object in medals) {
+        arr.push([object, medals[object]]);
+    }
+    console.log(arr}));
+
+
+
+    // 5. Sort the athletes by most years in the Olympics
+    let numOfMedals = medals.reduce((sum, medal) => { return sum + medal.category + medal.year; }, "");
+    console.log(numOfMedals, " ");
+    // 6. Make an array for each of the athletes' medals
+
+    //Ok I understand again---------------------------------------------
+    // 7. Return all the medals that are NOT gold
+    let nonGold = medals.filter(z => {return z.rank != 'gold';});
+    console.log(nonGold);
+
+    // 8. Make an array that prints out the medal category and event by year
+    let sortedMedals = (medals.sort((a,b) => { return a.year-b.year; })).map(c => { return c.category + " medal in year " + c.year; });
+    console.log(sortedMedals);
+  </script>
+</body>
+
+</html>
